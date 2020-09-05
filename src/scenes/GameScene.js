@@ -1,7 +1,9 @@
 import Phaser from 'phaser';
 import ScrollingBackground from '../sprites/ScrollingBackground';
 import Player from '../sprites/Player';
-import haserShip from '../sprites/ChaserShip';
+import ChaserShip from '../sprites/ChaserShip';
+import CarrierShip from '../sprites/CarrierShip';
+import GunShip from '../sprites/GunShip';
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
@@ -61,7 +63,6 @@ export default class GameScene extends Phaser.Scene {
       this.game.config.height * 0.5,
       'sprPlayer'
     );
-    console.log(this.player);
 
     this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
     this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);

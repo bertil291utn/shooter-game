@@ -113,16 +113,17 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.audio('sndExplode1', 'src/content/sndExplode1.wav');
     this.load.audio('sndLaser', 'src/content/sndLaser.wav');
 
-    // this.load.image('starfield', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/starfield.png');
-    // this.load.image('ship', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/player.png');
-    // this.load.image('bullet', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/bullet.png');
-    // this.load.image('enemy-green', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/enemy-green.png');
-    // this.load.image('enemy-blue', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/enemy-blue.png');
-    // this.load.image('blueEnemyBullet', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/enemy-blue-bullet.png');
-    // this.load.spritesheet('explosion', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/explode.png', 128, 128);
-    // this.load.bitmapFont('spacefont', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/spacefont/spacefont.png', 'https://rawgit.com/jschomay/phaser-demo-game/master/assets/spacefont/spacefont.xml');
-    // this.load.image('boss', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/boss.png');
-    // this.load.image('deathRay', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/death-ray.png');
+    this.load.image('sprBg0', 'src/content/background-space.png');
+    this.load.image('sprBg1', 'src/content/background-space.png');
+    this.load.image('sprBtnPlay', 'src/content/sprBtnPlay.png');
+    this.load.image('sprBtnPlayHover', 'src/content/sprBtnPlayHover.png');
+    this.load.image('sprBtnPlayDown', 'src/content/sprBtnPlayDown.png');
+    this.load.image('sprBtnRestart', 'src/content/sprBtnRestart.png');
+    this.load.image('sprBtnRestartHover', 'src/content/sprBtnRestartHover.png');
+    this.load.image('sprBtnRestartDown', 'src/content/sprBtnRestartDown.png');
+    this.load.audio('sndBtnOver', 'src/content/sndBtnOver.wav');
+    this.load.audio('sndBtnDown', 'src/content/sndBtnDown.wav');
+    this.load.html('my_form', 'src/content/text/my_form.html');
   }
 
   ready() {
