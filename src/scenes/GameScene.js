@@ -1,5 +1,4 @@
 import Phaser from 'phaser';
-import ScrollingBackground from '../sprites/ScrollingBackground';
 import Player from '../sprites/Player';
 import ChaserShip from '../sprites/ChaserShip';
 import CarrierShip from '../sprites/CarrierShip';
@@ -11,6 +10,7 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
+    this.add.image(400, 300, 'sprBg0');
     this.anims.create({
       key: 'sprEnemy0',
       frames: this.anims.generateFrameNumbers('sprEnemy0'),
@@ -49,13 +49,6 @@ export default class GameScene extends Phaser.Scene {
       ],
       laser: this.sound.add('sndLaser'),
     };
-
-    this.backgrounds = [];
-    for (var i = 0; i < 5; i++) {
-
-      var bg = new ScrollingBackground(this, 'sprBg0', i * 10);
-      this.backgrounds.push(bg);
-    }
 
     this.player = new Player(
       this,
@@ -232,10 +225,6 @@ export default class GameScene extends Phaser.Scene {
           laser.destroy();
         }
       }
-    }
-
-    for (var i = 0; i < this.backgrounds.length; i++) {
-      this.backgrounds[i].update();
     }
   }
 }
