@@ -55,7 +55,7 @@ export default class GameOverScene extends Phaser.Scene {
       'pointerup',
       function () {
         this.btnRestart.setTexture('sprBtnRestart');
-        this.scene.start('SceneMain');
+        this.scene.start('Game');
       },
       this
     );
