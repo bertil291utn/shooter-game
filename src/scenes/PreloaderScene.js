@@ -89,17 +89,40 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('box', 'src/assets/ui/grey_box.png');
     this.load.image('checkedBox', 'src/assets/ui/blue_boxCheckmark.png');
     this.load.audio('bgMusic', ['src/assets/TownTheme.mp3']);
+    this.load.spritesheet('sprExplosion', 'src/content/sprExplosion.png', {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
+    this.load.spritesheet('sprEnemy0', 'src/content/sprEnemy0.png', {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
+    this.load.image('sprEnemy1', 'src/content/sprEnemy1.png');
+    this.load.spritesheet('sprEnemy2', 'src/content/sprEnemy2.png', {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
+    this.load.image('sprLaserEnemy0', 'src/content/sprLaserEnemy0.png');
+    this.load.image('sprLaserPlayer', 'src/content/sprLaserPlayer.png');
+    this.load.spritesheet('sprPlayer', 'src/content/sprPlayer.png', {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
 
-    this.load.image('starfield', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/starfield.png');
-    this.load.image('ship', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/player.png');
-    this.load.image('bullet', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/bullet.png');
-    this.load.image('enemy-green', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/enemy-green.png');
-    this.load.image('enemy-blue', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/enemy-blue.png');
-    this.load.image('blueEnemyBullet', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/enemy-blue-bullet.png');
-    this.load.spritesheet('explosion', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/explode.png', 128, 128);
-    this.load.bitmapFont('spacefont', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/spacefont/spacefont.png', 'https://rawgit.com/jschomay/phaser-demo-game/master/assets/spacefont/spacefont.xml');  
-    this.load.image('boss', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/boss.png');
-    this.load.image('deathRay', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/death-ray.png');
+    this.load.audio('sndExplode0', 'src/content/sndExplode0.wav');
+    this.load.audio('sndExplode1', 'src/content/sndExplode1.wav');
+    this.load.audio('sndLaser', 'src/content/sndLaser.wav');
+
+    // this.load.image('starfield', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/starfield.png');
+    // this.load.image('ship', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/player.png');
+    // this.load.image('bullet', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/bullet.png');
+    // this.load.image('enemy-green', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/enemy-green.png');
+    // this.load.image('enemy-blue', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/enemy-blue.png');
+    // this.load.image('blueEnemyBullet', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/enemy-blue-bullet.png');
+    // this.load.spritesheet('explosion', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/explode.png', 128, 128);
+    // this.load.bitmapFont('spacefont', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/spacefont/spacefont.png', 'https://rawgit.com/jschomay/phaser-demo-game/master/assets/spacefont/spacefont.xml');
+    // this.load.image('boss', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/boss.png');
+    // this.load.image('deathRay', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/death-ray.png');
   }
 
   ready() {
