@@ -1,5 +1,5 @@
 import 'phaser';
-import Button from '../Objects/Button';
+import Button from '../objects/Button';
 
 export default class OptionsScene extends Phaser.Scene {
   constructor() {
@@ -39,7 +39,7 @@ export default class OptionsScene extends Phaser.Scene {
       'blueButton1',
       'blueButton2',
       'Menu',
-      'Title'
+      'Main'
     );
 
     this.updateAudio();
