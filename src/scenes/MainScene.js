@@ -8,6 +8,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   create () {
+    const element = this.add.dom(config.width/2, config.height/2 - 200).createFromCache('my_form');
     // Game
     this.gameButton = new Button(this, config.width/2, config.height/2 - 100, 'blueButton1', 'blueButton2', 'Play', 'Game');
 
