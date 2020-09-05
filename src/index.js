@@ -7,6 +7,7 @@ import MainScene from './scenes/MainScene';
 import OptionsScene from './scenes/OptionsScene';
 import LeaderBoardScene from './scenes/LeaderBoardScene';
 import GameScene from './scenes/GameScene';
+import GameOverScene from './scenes/GameOverScene';
 
 class Game extends Phaser.Game {
   constructor() {
@@ -14,11 +15,12 @@ class Game extends Phaser.Game {
     const model = new Model();
     this.globals = { model, bgMusic: null };
     this.scene.add('Boot', BootScene);
-    this.scene.add('Preloader', PreloaderScene);
+    this.scene.add('Game', GameScene);
+    this.scene.add('GameOver', GameOverScene);
+    this.scene.add('LeaderBoard', LeaderBoardScene);
     this.scene.add('Main', MainScene);
     this.scene.add('Options', OptionsScene);
-    this.scene.add('LeaderBoard', LeaderBoardScene);
-    this.scene.add('Game', GameScene);
+    this.scene.add('Preloader', PreloaderScene);
     this.scene.start('Boot');
   }
 }
