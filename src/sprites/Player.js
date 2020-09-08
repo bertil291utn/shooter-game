@@ -41,6 +41,7 @@ export default class Player extends Entity {
   }
 
   update() {
+    this.model = this.scene.sys.game.globals.model;
     this.body.setVelocity(0, 0);
     this.x = Phaser.Math.Clamp(this.x, 0, this.scene.game.config.width);
     this.y = Phaser.Math.Clamp(this.y, 0, this.scene.game.config.height);
@@ -51,8 +52,7 @@ export default class Player extends Entity {
       } else {
         const laser = new PlayerLaser(this.scene, this.x, this.y);
         this.scene.playerLasers.add(laser);
-
-        this.scene.sfx.laser.play();
+        if (this.model.soundOn) this.scene.sfx.laser.play();
         this.setData('timerShootTick', 0);
       }
     }

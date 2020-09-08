@@ -47,22 +47,24 @@ export default class OptionsScene extends Phaser.Scene {
   }
 
   updateAudio() {
-    if (this.model.musicOn === false) {
+    if (!this.model.musicOn) {
       this.musicButton.setTexture('box');
       this.sys.game.globals.bgMusic.stop();
       this.model.bgMusicPlaying = false;
     } else {
       this.musicButton.setTexture('checkedBox');
-      if (this.model.bgMusicPlaying === false) {
+      if (!this.model.bgMusicPlaying) {
         this.sys.game.globals.bgMusic.play();
         this.model.bgMusicPlaying = true;
       }
     }
 
-    if (this.model.soundOn === false) {
+    if (!this.model.soundOn) {
       this.soundButton.setTexture('box');
+      this.model.soundOn = false;
     } else {
       this.soundButton.setTexture('checkedBox');
+      this.model.soundOn = true;
     }
   }
 }
