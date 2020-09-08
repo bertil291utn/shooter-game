@@ -35,7 +35,7 @@ export default class GameOverScene extends Phaser.Scene {
       400,
       'blueButton1',
       'blueButton2',
-      'Menu',
+      'Exit',
       'Main'
     );
   }

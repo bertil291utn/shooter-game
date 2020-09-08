@@ -22,7 +22,8 @@ export default class UserScene extends Phaser.Scene {
         const inputUsername = element.getChildByID('username');
         if (!inputUsername.value) return;
         const pattern = /^\w{4,}$/;
-        const moreThanFourChars = pattern.test(inputUsername.value);
+        const moreThanFourChars = pattern.test(inputUsername.value); // take to a method to test pattern input
+        // test if already is there localstorage variable wiht this user
         if (!moreThanFourChars) return;
         console.log(inputUsername.value);
         element.scene.scene.start('Instructions');

@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import Button from '../Objects/Button';
 
 export default class LeaderBoardScene extends Phaser.Scene {
   constructor() {
@@ -22,10 +23,21 @@ export default class LeaderBoardScene extends Phaser.Scene {
       fontFamily: this.fontFamily,
       color: '#fff'
     }
+    //test apis
 // loop
 // create an object for each line
     this.add.text(150, 90, `1`, dataConfig);
     this.add.text(350, 90, `900`, dataConfig);
     this.add.text(525, 90, `betos`, dataConfig);
+
+    this.mainButton = new Button(
+      this,
+      400,
+      500,
+      'blueButton1',
+      'blueButton2',
+      'Exit',
+      'Main'
+    );
   }
 }
