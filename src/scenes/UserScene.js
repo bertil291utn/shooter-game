@@ -25,7 +25,7 @@ export default class UserScene extends Phaser.Scene {
         const moreThanFourChars = pattern.test(inputUsername.value);
         if (!moreThanFourChars) return;
         console.log(inputUsername.value);
-        element.scene.scene.start('Game');
+        element.scene.scene.start('Instructions');
       }
     });
   }
