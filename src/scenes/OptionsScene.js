@@ -1,5 +1,6 @@
-import 'phaser';
-import Button from '../objects/Button';
+/* eslint-disable comma-dangle */
+import Phaser from 'phaser';
+import Button from '../Objects/Button';
 
 export default class OptionsScene extends Phaser.Scene {
   constructor() {
@@ -26,10 +27,10 @@ export default class OptionsScene extends Phaser.Scene {
 
     this.soundButton.on(
       'pointerdown',
-      function () {
+      () => {
         this.model.soundOn = !this.model.soundOn;
         this.updateAudio();
-      }.bind(this)
+      }
     );
 
     this.menuButton = new Button(

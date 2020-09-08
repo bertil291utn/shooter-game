@@ -1,6 +1,7 @@
+/* eslint-disable comma-dangle */
 import Phaser from 'phaser';
 import config from '../config/config';
-import Button from '../objects/Button';
+import Button from '../Objects/Button';
 
 export default class MainScene extends Phaser.Scene {
   constructor() {
@@ -8,7 +9,6 @@ export default class MainScene extends Phaser.Scene {
   }
 
   create() {
-    // Game
     this.gameButton = new Button(
       this,
       config.width / 2,
@@ -19,7 +19,6 @@ export default class MainScene extends Phaser.Scene {
       'User'
     );
 
-    // Options
     this.optionsButton = new Button(
       this,
       config.width / 2,
@@ -30,7 +29,6 @@ export default class MainScene extends Phaser.Scene {
       'Options'
     );
 
-    // Credits
     this.creditsButton = new Button(
       this,
       config.width / 2,
@@ -60,9 +58,5 @@ export default class MainScene extends Phaser.Scene {
         config.height
       )
     );
-  }
-
-  centerButtonText(gameText, gameButton) {
-    Phaser.Display.Align.In.Center(gameText, gameButton);
   }
 }
