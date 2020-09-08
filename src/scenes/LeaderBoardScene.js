@@ -1,3 +1,31 @@
 import Phaser from 'phaser';
 
-export default class LeaderBoardScene extends Phaser.Scene {}
+export default class LeaderBoardScene extends Phaser.Scene {
+  constructor() {
+    super('LeaderBoard')
+  }
+
+  create() {
+    this.fontFamily = 'Arcadepix'
+    const titleConfig = {
+      fontSize: 35,
+      fontFamily: this.fontFamily,
+      color: '#3DC93F'
+    }
+
+    this.add.text(100, 20, 'Rank', titleConfig);
+    this.add.text(300, 20, 'Score', titleConfig);
+    this.add.text(500, 20, 'Name', titleConfig);
+
+    const dataConfig = {
+      fontSize: 20,
+      fontFamily: this.fontFamily,
+      color: '#fff'
+    }
+// loop
+// create an object for each line
+    this.add.text(150, 90, `1`, dataConfig);
+    this.add.text(350, 90, `900`, dataConfig);
+    this.add.text(525, 90, `betos`, dataConfig);
+  }
+}
