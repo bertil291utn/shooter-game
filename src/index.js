@@ -8,6 +8,7 @@ import OptionsScene from './scenes/OptionsScene';
 import LeaderBoardScene from './scenes/LeaderBoardScene';
 import GameScene from './scenes/GameScene';
 import GameOverScene from './scenes/GameOverScene';
+import UserScene from './scenes/UserScene';
 
 class Game extends Phaser.Game {
   constructor() {
@@ -21,6 +22,7 @@ class Game extends Phaser.Game {
     this.scene.add('Main', MainScene);
     this.scene.add('Options', OptionsScene);
     this.scene.add('Preloader', PreloaderScene);
+    this.scene.add('User', UserScene);
     this.scene.start('Boot');
   }
 }

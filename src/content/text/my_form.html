@@ -3,12 +3,52 @@
 
 <head>
   <style>
+    .login {
+      margin-top: 50vh;
+      text-align: center;
+    }
+
+    label {
+      color: white;
+      font-size: 1.5rem;
+      display: block;
+      margin: 1rem 0;
+    }
+
     #username {
       padding: 1rem;
       border: 0;
+      width: 20rem;
+      font-size: 1.25rem;
     }
 
     #username:focus {
+      outline: none;
+    }
+
+    .button {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      border: 0;
+      width: 22rem;
+      font-size: 1.25rem;
+      color: #fff;
+    }
+
+    .main-button {
+      background: #1EA7E1;
+    }
+
+    .secondary-button {
+      background: none;
+      margin: 0;
+    }
+
+    .button:hover {
+      cursor: pointer;
+    }
+
+    .button:focus {
       outline: none;
     }
   </style>
@@ -17,9 +57,10 @@
 
 <body>
   <div class="login">
-    <label for="username">Enter your username</label>
-    <input type="text" placeholder="Username" id="username" name="username">
-    <input type="submit" value="Confirm" name="confirmButton">
+    <label for="username">Enter your username</label><br>
+    <input type="text" placeholder="Username" id="username" name="username-input" required><br>
+    <input type="submit" class="button main-button" value="Play" name="confirmButton"><br>
+    <button name="backButton" class="button secondary-button">Main Menu</button>
   </div>
   <div class="shadow"></div>
 

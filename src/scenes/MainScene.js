@@ -3,20 +3,43 @@ import config from '../config/config';
 import Button from '../objects/Button';
 
 export default class MainScene extends Phaser.Scene {
-  constructor () {
+  constructor() {
     super('Main');
   }
 
-  create () {
-    const element = this.add.dom(config.width/2, config.height/2 - 200).createFromCache('my_form');
+  create() {
     // Game
-    this.gameButton = new Button(this, config.width/2, config.height/2 - 100, 'blueButton1', 'blueButton2', 'Play', 'Game');
+    this.gameButton = new Button(
+      this,
+      config.width / 2,
+      config.height / 2 - 100,
+      'blueButton1',
+      'blueButton2',
+      'Play',
+      'User'
+    );
 
     // Options
-    this.optionsButton = new Button(this, config.width/2, config.height/2, 'blueButton1', 'blueButton2', 'Options', 'Options');
+    this.optionsButton = new Button(
+      this,
+      config.width / 2,
+      config.height / 2,
+      'blueButton1',
+      'blueButton2',
+      'Options',
+      'Options'
+    );
 
     // Credits
-    this.creditsButton = new Button(this, config.width/2, config.height/2 + 100, 'blueButton1', 'blueButton2', 'Board', 'LeaderBoard');
+    this.creditsButton = new Button(
+      this,
+      config.width / 2,
+      config.height / 2 + 100,
+      'blueButton1',
+      'blueButton2',
+      'Board',
+      'LeaderBoard'
+    );
 
     this.model = this.sys.game.globals.model;
     if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
@@ -27,17 +50,19 @@ export default class MainScene extends Phaser.Scene {
     }
   }
 
-  centerButton (gameObject, offset = 0) {
+  centerButton(gameObject, offset = 0) {
     Phaser.Display.Align.In.Center(
       gameObject,
-      this.add.zone(config.width/2, config.height/2 - offset * 100, config.width, config.height)
+      this.add.zone(
+        config.width / 2,
+        config.height / 2 - offset * 100,
+        config.width,
+        config.height
+      )
     );
   }
 
-  centerButtonText (gameText, gameButton) {
-    Phaser.Display.Align.In.Center(
-      gameText,
-      gameButton
-    );
+  centerButtonText(gameText, gameButton) {
+    Phaser.Display.Align.In.Center(gameText, gameButton);
   }
-};
+}
