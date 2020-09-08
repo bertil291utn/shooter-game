@@ -21,6 +21,9 @@ export default class UserScene extends Phaser.Scene {
       if (event.target.name === 'confirmButton') {
         const inputUsername = element.getChildByID('username');
         if (!inputUsername.value) return;
+        const pattern = /^\w{4,}$/;
+        const moreThanFourChars = pattern.test(inputUsername.value);
+        if (!moreThanFourChars) return;
         console.log(inputUsername.value);
         element.scene.scene.start('Game');
       }
