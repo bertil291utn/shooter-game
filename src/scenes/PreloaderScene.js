@@ -1,0 +1,136 @@
+import Phaser from 'phaser';
+
+export default class PreloaderScene extends Phaser.Scene {
+  constructor() {
+    super('Preloader');
+  }
+
+  init() {
+    this.readyCount = 0;
+  }
+
+  preload() {
+    // add logo image
+    this.add.image(400, 200, 'logo');
+
+    // display progress bar
+    const progressBar = this.add.graphics();
+    const progressBox = this.add.graphics();
+    progressBox.fillStyle(0x222222, 0.8);
+    progressBox.fillRect(240, 270, 320, 50);
+
+    const { width, height } = this.cameras.main;
+    // const height = this.cameras.main.height;
+    const loadingText = this.make.text({
+      x: width / 2,
+      y: height / 2 - 50,
+      text: 'Loading...',
+      style: {
+        font: '20px monospace',
+        fill: '#ffffff',
+      },
+    });
+    loadingText.setOrigin(0.5, 0.5);
+
+    const percentText = this.make.text({
+      x: width / 2,
+      y: height / 2 - 5,
+      text: '0%',
+      style: {
+        font: '18px monospace',
+        fill: '#ffffff',
+      },
+    });
+    percentText.setOrigin(0.5, 0.5);
+
+    const assetText = this.make.text({
+      x: width / 2,
+      y: height / 2 + 50,
+      text: '',
+      style: {
+        font: '18px monospace',
+        fill: '#ffffff',
+      },
+    });
+    assetText.setOrigin(0.5, 0.5);
+
+    // update progress bar
+    this.load.on('progress', (value) => {
+      percentText.setText(`${+value * 1000} %`);
+      progressBar.clear();
+      progressBar.fillStyle(0xffffff, 1);
+      progressBar.fillRect(250, 280, 300 * value, 30);
+    });
+
+    // update file progress text
+    this.load.on('fileprogress', (file) => {
+      assetText.setText('Loading asset: ' + file.key);
+    });
+
+    // remove progress bar when complete
+    this.load.on(
+      'complete',
+      function () {
+        progressBar.destroy();
+        progressBox.destroy();
+        loadingText.destroy();
+        percentText.destroy();
+        assetText.destroy();
+        this.ready();
+      }.bind(this)
+    );
+
+    this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
+
+    // load assets needed in our game
+    this.load.image('blueButton1', 'src/assets/ui/blue_button02.png');
+    this.load.image('blueButton2', 'src/assets/ui/blue_button03.png');
+    this.load.image('phaserLogo', 'src/assets/logo.png');
+    this.load.image('box', 'src/assets/ui/grey_box.png');
+    this.load.image('checkedBox', 'src/assets/ui/blue_boxCheckmark.png');
+    this.load.audio('bgMusic', ['src/assets/TownTheme.mp3']);
+    this.load.spritesheet('sprExplosion', 'src/content/sprExplosion.png', {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
+    this.load.spritesheet('sprEnemy0', 'src/content/sprEnemy0.png', {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
+    this.load.image('sprEnemy1', 'src/content/sprEnemy1.png');
+    this.load.spritesheet('sprEnemy2', 'src/content/sprEnemy2.png', {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
+    this.load.image('sprLaserEnemy0', 'src/content/sprLaserEnemy0.png');
+    this.load.image('sprLaserPlayer', 'src/content/sprLaserPlayer.png');
+    this.load.spritesheet('sprPlayer', 'src/content/sprPlayer.png', {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
+
+    this.load.audio('sndExplode0', 'src/content/sndExplode0.wav');
+    this.load.audio('sndExplode1', 'src/content/sndExplode1.wav');
+    this.load.audio('sndLaser', 'src/content/sndLaser.wav');
+
+    this.load.image('sprBg0', 'src/content/background-space.png');
+    this.load.image('sprBg1', 'src/content/background-space.png');
+    this.load.image('sprBtnPlay', 'src/content/sprBtnPlay.png');
+    this.load.image('sprBtnPlayHover', 'src/content/sprBtnPlayHover.png');
+    this.load.image('sprBtnPlayDown', 'src/content/sprBtnPlayDown.png');
+    this.load.image('sprBtnRestart', 'src/content/sprBtnRestart.png');
+    this.load.image('sprBtnRestartHover', 'src/content/sprBtnRestartHover.png');
+    this.load.image('sprBtnRestartDown', 'src/content/sprBtnRestartDown.png');
+    this.load.audio('sndBtnOver', 'src/content/sndBtnOver.wav');
+    this.load.audio('sndBtnDown', 'src/content/sndBtnDown.wav');
+    this.load.html('my_form', 'src/content/text/my_form.html');
+  }
+
+  ready() {
+    this.scene.start('Main');
+    // this.readyCount++;
+    // if (this.readyCount === 2) {
+    //   this.scene.start('Title');
+    // }
+  }
+}
