@@ -1,5 +1,6 @@
 /* eslint-disable comma-dangle */
 import Phaser from 'phaser';
+import Button from '../Objects/Button';
 
 export default class GameOverScene extends Phaser.Scene {
   constructor() {
@@ -17,48 +18,25 @@ export default class GameOverScene extends Phaser.Scene {
     });
     this.title.setOrigin(0.5);
 
-    this.sfx = {
-      btnOver: this.sound.add('sndBtnOver'),
-      btnDown: this.sound.add('sndBtnDown'),
-    };
 
-    this.btnRestart = this.add.sprite(
-      this.game.config.width * 0.5,
-      this.game.config.height * 0.5,
-      'sprBtnRestart'
+    this.resetButton = new Button(
+      this,
+      400,
+      300,
+      'blueButton1',
+      'blueButton2',
+      'Reset',
+      'Game'
     );
 
-    this.btnRestart.setInteractive();
-
-    this.btnRestart.on(
-      'pointerover',
-      () => {
-        this.btnRestart.setTexture('sprBtnRestartHover');
-        this.sfx.btnOver.play();
-      },
-      this
-    );
-
-    this.btnRestart.on('pointerout', () => {
-      this.setTexture('sprBtnRestart');
-    });
-
-    this.btnRestart.on(
-      'pointerdown',
-      () => {
-        this.btnRestart.setTexture('sprBtnRestartDown');
-        this.sfx.btnDown.play();
-      },
-      this
-    );
-
-    this.btnRestart.on(
-      'pointerup',
-      () => {
-        this.btnRestart.setTexture('sprBtnRestart');
-        this.scene.start('Game');
-      },
-      this
+    this.mainButton = new Button(
+      this,
+      400,
+      400,
+      'blueButton1',
+      'blueButton2',
+      'Menu',
+      'Main'
     );
   }
 }

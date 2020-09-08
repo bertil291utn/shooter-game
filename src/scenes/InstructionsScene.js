@@ -21,7 +21,7 @@ export default class OptionsScene extends Phaser.Scene {
       'Game'
     );
 
-    this.gameButton = new Button(
+    this.mainButton = new Button(
       this,
       400,
       500,
