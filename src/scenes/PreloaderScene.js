@@ -10,9 +10,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.readyCount = 0;
   }
 
-  preload() {
-    this.add.image(400, 200, 'logo');
-
+  initLoadingSprite() {
     const progressBar = this.add.graphics();
     const progressBox = this.add.graphics();
     progressBox.fillStyle(0x222222, 0.8);
@@ -76,6 +74,11 @@ export default class PreloaderScene extends Phaser.Scene {
     );
 
     this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
+  }
+
+  preload() {
+    this.add.image(400, 200, 'logo');
+    this.initLoadingSprite();
 
     this.load.image('blueButton1', 'src/assets/ui/blue_button02.png');
     this.load.image('blueButton2', 'src/assets/ui/blue_button03.png');
@@ -98,10 +101,11 @@ export default class PreloaderScene extends Phaser.Scene {
     });
     this.load.image('sprLaserEnemy0', 'src/content/sprLaserEnemy0.png');
     this.load.image('sprLaserPlayer', 'src/content/sprLaserPlayer.png');
-    this.load.spritesheet('sprPlayer', 'src/content/sprPlayer.png', {
-      frameWidth: 16,
-      frameHeight: 16,
+    this.load.spritesheet('sprPlayer', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/player.png', {
+      frameWidth: 50,
+      frameHeight: 50,
     });
+
 
     this.load.audio('sndExplode0', 'src/content/sndExplode0.wav');
     this.load.audio('sndExplode1', 'src/content/sndExplode1.wav');
