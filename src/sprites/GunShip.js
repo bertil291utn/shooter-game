@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 
 import Phaser from 'phaser';
 import Entity from './Entities';
@@ -5,15 +6,15 @@ import EnemyLaser from './EnemyLaser';
 
 export default class GunShip extends Entity {
   constructor(scene, x, y) {
-    super(scene, x, y, "sprEnemy0", "GunShip");
-    this.play("sprEnemy0");
+    super(scene, x, y, 'sprEnemy0', 'GunShip');
+    this.play('sprEnemy0');
 
     this.body.velocity.y = Phaser.Math.Between(50, 100);
 
     this.shootTimer = this.scene.time.addEvent({
       delay: 1000,
-      callback: function() {
-        var laser = new EnemyLaser(
+      callback: () => {
+        const laser = new EnemyLaser(
           this.scene,
           this.x,
           this.y

@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 import Phaser from 'phaser';
 
 export default class GameOverScene extends Phaser.Scene {
@@ -31,20 +32,20 @@ export default class GameOverScene extends Phaser.Scene {
 
     this.btnRestart.on(
       'pointerover',
-      function () {
-        this.btnRestart.setTexture('sprBtnRestartHover'); // set the button texture to sprBtnPlayHover
-        this.sfx.btnOver.play(); // play the button over sound
+      () => {
+        this.btnRestart.setTexture('sprBtnRestartHover');
+        this.sfx.btnOver.play();
       },
       this
     );
 
-    this.btnRestart.on('pointerout', function () {
+    this.btnRestart.on('pointerout', () => {
       this.setTexture('sprBtnRestart');
     });
 
     this.btnRestart.on(
       'pointerdown',
-      function () {
+      () => {
         this.btnRestart.setTexture('sprBtnRestartDown');
         this.sfx.btnDown.play();
       },
@@ -53,7 +54,7 @@ export default class GameOverScene extends Phaser.Scene {
 
     this.btnRestart.on(
       'pointerup',
-      function () {
+      () => {
         this.btnRestart.setTexture('sprBtnRestart');
         this.scene.start('Game');
       },
