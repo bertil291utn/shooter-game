@@ -8,9 +8,12 @@ import GunShip from '../sprites/GunShip';
 export default class GameScene extends Phaser.Scene {
   constructor() {
     super('Game');
+    this.score = 0;
+    this.textLabelScore = undefined;
   }
 
   create() {
+    this.model = this.sys.game.globals.model;
     this.add.image(400, 300, 'sprBg0');
     this.anims.create({
       key: 'sprEnemy0',
@@ -37,19 +40,21 @@ export default class GameScene extends Phaser.Scene {
       repeat: -1,
     });
 
-    this.textLabelScore = this.add.text(32, 32, 'SCORE', {
+    this.textLabelScore = this.add.text(32, 32, 'SCORE: 0', {
       fontFamily: 'Arcadepix',
       fontSize: 16,
       align: 'left',
     });
 
-    this.sfx = {
-      explosions: [
-        this.sound.add('sndExplode0'),
-        this.sound.add('sndExplode1'),
-      ],
-      laser: this.sound.add('sndLaser'),
-    };
+    if (this.model.soundOn) {
+      this.sfx = {
+        explosions: [
+          this.sound.add('sndExplode0'),
+          this.sound.add('sndExplode1'),
+        ],
+        laser: this.sound.add('sndLaser'),
+      };
+    }
 
     this.player = new Player(
       this,
@@ -116,6 +121,8 @@ export default class GameScene extends Phaser.Scene {
           }
           enemy.explode(true);
           playerLaser.destroy();
+          this.score += 10;
+          this.textLabelScore.setText(`Score: ${this.score}`);
         }
       }
     );
