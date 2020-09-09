@@ -21,7 +21,7 @@ export default class GameOverScene extends Phaser.Scene {
 
     this.resetButton = new Button(
       this,
-      400,
+      300,
       300,
       'blueButton1',
       'blueButton2',
@@ -29,9 +29,19 @@ export default class GameOverScene extends Phaser.Scene {
       'Game'
     );
 
+    this.newPlayerButton = new Button(
+      this,
+      600,
+      300,
+      'blueButton1',
+      'blueButton2',
+      'New',
+      'User'
+    );
+
     this.mainButton = new Button(
       this,
-      400,
+      300,
       400,
       'blueButton1',
       'blueButton2',
