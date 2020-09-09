@@ -1,5 +1,7 @@
+/* eslint-disable class-methods-use-this */
 import Phaser from 'phaser';
 import config from '../config/config';
+import PlayerModel from '../PlayerModel';
 
 export default class UserScene extends Phaser.Scene {
   constructor() {
@@ -21,9 +23,12 @@ export default class UserScene extends Phaser.Scene {
       if (event.target.name === 'confirmButton') {
         const inputUsername = element.getChildByID('username');
         if (!inputUsername.value) return;
-        // test if already is there localstorage variable wiht this user
         if (!this.moreThanFourChars(inputUsername.value)) return;
-        console.log(inputUsername.value);
+
+        // console.log(inputUsername.value);
+        const playerModel = new PlayerModel();
+        playerModel.username = inputUsername.value;
+        this.sys.game.globals.playerModel = playerModel;
         element.scene.scene.start('Instructions');
       }
     });
@@ -33,6 +38,4 @@ export default class UserScene extends Phaser.Scene {
     const pattern = /^\w{4,}$/;
     return pattern.test(value);
   }
-
-
 }
