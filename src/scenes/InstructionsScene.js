@@ -8,9 +8,10 @@ export default class OptionsScene extends Phaser.Scene {
   }
 
   create() {
-    this.text = this.add.text(300, 100, 'Instructions', { fontSize: 35 });
-    const displayText = 'Up: W\nDown: S\nLeft: A\nRight: D\nShoot: SPACE BAR ';
-    this.text = this.add.text(300, 200, displayText, { fontSize: 25 });
+    this.fontFamily = 'Arcadepix';
+    this.text = this.add.text(300, 100, 'Instructions', { fontSize: 35, fontFamily: this.fontFamily });
+    const displayText = 'Up: ⬆\nDown: ⬇\nLeft: ⬅\nRight: ➡\nShoot: SPACE BAR ';
+    this.text = this.add.text(300, 200, displayText, { fontSize: 25, fontFamily: this.fontFamily });
     this.gameButton = new Button(
       this,
       400,
