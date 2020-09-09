@@ -82,10 +82,10 @@ export default class PreloaderScene extends Phaser.Scene {
 
     this.load.image('blueButton1', 'src/assets/ui/blue_button02.png');
     this.load.image('blueButton2', 'src/assets/ui/blue_button03.png');
-    this.load.image('phaserLogo', 'src/assets/logo.png');
+    this.load.image('phaserLogo', 'src/content/logo-war-prime.png');
     this.load.image('box', 'src/assets/ui/grey_box.png');
     this.load.image('checkedBox', 'src/assets/ui/blue_boxCheckmark.png');
-    this.load.audio('bgMusic', ['src/assets/TownTheme.mp3']);
+    this.load.audio('bgMusic', ['src/content/EpicWar.mp3']);
     this.load.spritesheet('sprExplosion', 'src/content/sprExplosion.png', {
       frameWidth: 32,
       frameHeight: 32,

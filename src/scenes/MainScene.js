@@ -9,6 +9,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   create() {
+    this.add.image(400, 300, 'phaserLogo');
     this.gameButton = new Button(
       this,
       config.width / 2,
