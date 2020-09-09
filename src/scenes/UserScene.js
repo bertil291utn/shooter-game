@@ -21,13 +21,18 @@ export default class UserScene extends Phaser.Scene {
       if (event.target.name === 'confirmButton') {
         const inputUsername = element.getChildByID('username');
         if (!inputUsername.value) return;
-        const pattern = /^\w{4,}$/;
-        const moreThanFourChars = pattern.test(inputUsername.value); // take to a method to test pattern input
         // test if already is there localstorage variable wiht this user
-        if (!moreThanFourChars) return;
+        if (!this.moreThanFourChars(inputUsername.value)) return;
         console.log(inputUsername.value);
         element.scene.scene.start('Instructions');
       }
     });
   }
+
+  moreThanFourChars(value) {
+    const pattern = /^\w{4,}$/;
+    return pattern.test(value);
+  }
+
+
 }
