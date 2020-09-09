@@ -37,7 +37,7 @@ export default class LeaderBoardScene extends Phaser.Scene {
       'blueButton1',
       'blueButton2',
       'Exit',
-      'Main'
+      'Menu'
     );
   }
 }
