@@ -50,9 +50,8 @@ export default class PreloaderScene extends Phaser.Scene {
       },
     });
     assetText.setOrigin(0.5, 0.5);
-
     this.load.on('progress', (value) => {
-      percentText.setText(`${+value * 100} %`);
+      percentText.setText(`${(+value * 100).toFixed(2)} %`);
       progressBar.clear();
       progressBar.fillStyle(0xffffff, 1);
       progressBar.fillRect(250, 280, 300 * value, 30);
@@ -102,7 +101,7 @@ export default class PreloaderScene extends Phaser.Scene {
     });
     this.load.image('sprLaserEnemy0', 'src/content/sprLaserEnemy0.png');
     this.load.image('sprLaserPlayer', 'src/content/sprLaserPlayer.png');
-    this.load.spritesheet('sprPlayer', 'https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/player.png', {
+    this.load.spritesheet('sprPlayer', 'src/content/player.png', {
       frameWidth: 50,
       frameHeight: 50,
     });
