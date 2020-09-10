@@ -14,7 +14,7 @@ export default class GameOverScene extends Phaser.Scene {
     const key = this.sys.game.globals.localStorage;
     localStorageMethod.setPlayer(key, this.playerModel);
     // save to api and reset score
-    await API.setPlayer(this.playerModel);
+    if (this.playerModel.score !== 0) await API.setPlayer(this.playerModel);
     this.add.image(400, 300, 'sprBg0');
     this.title = this.add.text(this.game.config.width * 0.5, 128, 'GAME OVER', {
       fontFamily: 'Arcadepix',

@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import LogoImg from '../content/logo-war-prime.png';
+import LogoImg from '../content/images/logo-war-prime.png';
 
 export default class BootScene extends Phaser.Scene {
   constructor() {

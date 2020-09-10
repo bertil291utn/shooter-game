@@ -80,47 +80,47 @@ export default class PreloaderScene extends Phaser.Scene {
     this.add.image(400, 200, 'logo');
     this.initLoadingSprite();
 
-    this.load.image('blueButton1', 'src/assets/ui/blue_button02.png');
-    this.load.image('blueButton2', 'src/assets/ui/blue_button03.png');
-    this.load.image('phaserLogo', 'src/content/logo-war-prime.png');
-    this.load.image('box', 'src/assets/ui/grey_box.png');
-    this.load.image('checkedBox', 'src/assets/ui/blue_boxCheckmark.png');
-    this.load.audio('bgMusic', ['src/content/EpicWar.mp3']);
-    this.load.spritesheet('sprExplosion', 'src/content/sprExplosion.png', {
+    this.load.image('blueButton1', 'src/content/images/blue_button02.png');
+    this.load.image('blueButton2', 'src/content/images/blue_button03.png');
+    this.load.image('phaserLogo', 'src/content/images/logo-war-prime.png');
+    this.load.image('box', 'src/content/images/grey_box.png');
+    this.load.image('checkedBox', 'src/content/images/blue_boxCheckmark.png');
+    this.load.audio('bgMusic', ['src/content/sounds/EpicWar.mp3']);
+    this.load.spritesheet('sprExplosion', 'src/content/images/sprExplosion.png', {
       frameWidth: 32,
       frameHeight: 32,
     });
-    this.load.spritesheet('sprEnemy0', 'src/content/sprEnemy0.png', {
+    this.load.spritesheet('sprEnemy0', 'src/content/images/sprEnemy0.png', {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.image('sprEnemy1', 'src/content/sprEnemy1.png');
-    this.load.spritesheet('sprEnemy2', 'src/content/sprEnemy2.png', {
+    this.load.image('sprEnemy1', 'src/content/images/sprEnemy1.png');
+    this.load.spritesheet('sprEnemy2', 'src/content/images/sprEnemy2.png', {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.image('sprLaserEnemy0', 'src/content/sprLaserEnemy0.png');
-    this.load.image('sprLaserPlayer', 'src/content/sprLaserPlayer.png');
-    this.load.spritesheet('sprPlayer', 'src/content/player.png', {
+    this.load.image('sprLaserEnemy0', 'src/content/images/sprLaserEnemy0.png');
+    this.load.image('sprLaserPlayer', 'src/content/images/sprLaserPlayer.png');
+    this.load.spritesheet('sprPlayer', 'src/content/images/player.png', {
       frameWidth: 50,
       frameHeight: 50,
     });
 
 
-    this.load.audio('sndExplode0', 'src/content/sndExplode0.wav');
-    this.load.audio('sndExplode1', 'src/content/sndExplode1.wav');
-    this.load.audio('sndLaser', 'src/content/sndLaser.wav');
+    this.load.audio('sndExplode0', 'src/content/sounds/sndExplode0.wav');
+    this.load.audio('sndExplode1', 'src/content/sounds/sndExplode1.wav');
+    this.load.audio('sndLaser', 'src/content/sounds/sndLaser.wav');
 
-    this.load.image('sprBg0', 'src/content/background-space.png');
-    this.load.image('sprBg1', 'src/content/background-space.png');
-    this.load.image('sprBtnPlay', 'src/content/sprBtnPlay.png');
-    this.load.image('sprBtnPlayHover', 'src/content/sprBtnPlayHover.png');
-    this.load.image('sprBtnPlayDown', 'src/content/sprBtnPlayDown.png');
-    this.load.image('sprBtnRestart', 'src/content/sprBtnRestart.png');
-    this.load.image('sprBtnRestartHover', 'src/content/sprBtnRestartHover.png');
-    this.load.image('sprBtnRestartDown', 'src/content/sprBtnRestartDown.png');
-    this.load.audio('sndBtnOver', 'src/content/sndBtnOver.wav');
-    this.load.audio('sndBtnDown', 'src/content/sndBtnDown.wav');
+    this.load.image('sprBg0', 'src/content/images/background-space.png');
+    this.load.image('sprBg1', 'src/content/images/background-space.png');
+    this.load.image('sprBtnPlay', 'src/content/images/sprBtnPlay.png');
+    this.load.image('sprBtnPlayHover', 'src/content/images/sprBtnPlayHover.png');
+    this.load.image('sprBtnPlayDown', 'src/content/images/sprBtnPlayDown.png');
+    this.load.image('sprBtnRestart', 'src/content/images/sprBtnRestart.png');
+    this.load.image('sprBtnRestartHover', 'src/content/images/sprBtnRestartHover.png');
+    this.load.image('sprBtnRestartDown', 'src/content/images/sprBtnRestartDown.png');
+    this.load.audio('sndBtnOver', 'src/content/sounds/sndBtnOver.wav');
+    this.load.audio('sndBtnDown', 'src/content/sounds/sndBtnDown.wav');
     this.load.html('my_form', 'src/content/text/my_form.html');
   }
 
