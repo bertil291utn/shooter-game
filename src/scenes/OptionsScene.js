@@ -47,7 +47,6 @@ export default class OptionsScene extends Phaser.Scene {
     this.updateAudio();
   }
 
-  // test update audio testing this model musicon variable
   updateAudio() {
     if (!this.model.musicOn) {
       this.musicButton.setTexture('box');

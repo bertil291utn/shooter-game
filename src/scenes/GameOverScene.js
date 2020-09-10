@@ -9,13 +9,22 @@ export default class GameOverScene extends Phaser.Scene {
   }
 
   create() {
+    this.playerModel = this.sys.game.globals.playerModel;
     const key = this.sys.game.globals.localStorage;
-    localStorageMethod.setPlayer(key, this.sys.game.globals.playerModel);
+    localStorageMethod.setPlayer(key, this.playerModel);
     // save to api and reset score
     this.add.image(400, 300, 'sprBg0');
     this.title = this.add.text(this.game.config.width * 0.5, 128, 'GAME OVER', {
       fontFamily: 'Arcadepix',
       fontSize: 48,
+      fontStyle: 'bold',
+      color: '#ffffff',
+      align: 'center',
+    });
+
+    this.score = this.add.text(this.game.config.width * 0.4, 170, `Score: ${this.playerModel.score} `, {
+      fontFamily: 'Arcadepix',
+      fontSize: 24,
       fontStyle: 'bold',
       color: '#ffffff',
       align: 'center',

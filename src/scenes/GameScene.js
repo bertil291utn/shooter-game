@@ -150,7 +150,6 @@ export default class GameScene extends Phaser.Scene {
     });
   }
 
-  // TEST
   getEnemiesByType(type) {
     const arr = [];
     for (let i = 0; i < this.enemies.getChildren().length; i += 1) {

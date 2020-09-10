@@ -11,6 +11,7 @@ export default class PreloaderScene extends Phaser.Scene {
   }
 
   initLoadingSprite() {
+    this.fontFamily = 'Arcadepix';
     const progressBar = this.add.graphics();
     const progressBox = this.add.graphics();
     progressBox.fillStyle(0x222222, 0.8);
@@ -22,7 +23,7 @@ export default class PreloaderScene extends Phaser.Scene {
       y: height / 2 - 50,
       text: 'Loading...',
       style: {
-        font: '20px monospace',
+        font: `20px ${this.fontFamily}`,
         fill: '#ffffff',
       },
     });
@@ -33,7 +34,7 @@ export default class PreloaderScene extends Phaser.Scene {
       y: height / 2 - 5,
       text: '0%',
       style: {
-        font: '18px monospace',
+        font: `18px ${this.fontFamily}`,
         fill: '#ffffff',
       },
     });
@@ -44,14 +45,14 @@ export default class PreloaderScene extends Phaser.Scene {
       y: height / 2 + 50,
       text: '',
       style: {
-        font: '18px monospace',
+        font: `18px ${this.fontFamily}`,
         fill: '#ffffff',
       },
     });
     assetText.setOrigin(0.5, 0.5);
 
     this.load.on('progress', (value) => {
-      percentText.setText(`${+value * 1000} %`);
+      percentText.setText(`${+value * 100} %`);
       progressBar.clear();
       progressBar.fillStyle(0xffffff, 1);
       progressBar.fillRect(250, 280, 300 * value, 30);
