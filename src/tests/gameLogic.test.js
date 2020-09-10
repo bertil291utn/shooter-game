@@ -4,6 +4,8 @@ import UserScene from '../scenes/UserScene';
 import MainScene from '../scenes/MainScene';
 import PlayerModel from '../PlayerModel';
 import localStorageMethod from '../localStorage';
+import API from '../api';
+import '@babel/polyfill';
 
 const key = 'gameShooter';
 describe('When user input username', () => {
@@ -35,5 +37,13 @@ describe('Local storage', () => {
   it('returns true if the local storage was save', () => {
     localStorageMethod.setPlayer(key, playerModel);
     expect(localStorage.getItem(key)).not.toBeNull();
+  });
+});
+
+describe('APIs', () => {
+  it('returns an array object with the data ', () => {
+    API.getLeaderBoard().then(data => {
+      expect(data).toBeInstanceOf(Array);
+    });
   });
 });
