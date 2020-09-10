@@ -11,7 +11,20 @@ const API = (() => {
       throw new Error(error);
     }
   };
-  return { getLeaderBoard };
+
+  const setPlayer = async (player) => {
+    try {
+      const response = await axios.post(URL, {
+        user: player.username,
+        score: player.score,
+      });
+      return response.data.result;
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
+
+  return { getLeaderBoard, setPlayer };
 })();
 
 export default API;

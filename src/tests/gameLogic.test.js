@@ -46,4 +46,22 @@ describe('APIs', () => {
       expect(data).toBeInstanceOf(Array);
     });
   });
+
+  it('returns a message after post a object ', () => {
+    const playerModel = new PlayerModel();
+    playerModel.username = 'betos';
+    playerModel.score = 0;
+    API.setPlayer(playerModel).then(data => {
+      expect(data).toMatch(/Leaderboard score create./);
+    });
+  });
+
+  it('trows an error after post a non object ', () => {
+    const playerModel = new PlayerModel();
+    playerModel.username = 1;
+    playerModel.score = 0;
+    API.setPlayer(playerModel).then(data => {
+      expect(data).toThrow(Error);
+    });
+  });
 });

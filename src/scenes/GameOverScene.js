@@ -2,17 +2,19 @@
 import Phaser from 'phaser';
 import Button from '../Objects/Button';
 import localStorageMethod from '../localStorage';
+import API from '../api';
 
 export default class GameOverScene extends Phaser.Scene {
   constructor() {
     super('GameOver');
   }
 
-  create() {
+  async create() {
     this.playerModel = this.sys.game.globals.playerModel;
     const key = this.sys.game.globals.localStorage;
     localStorageMethod.setPlayer(key, this.playerModel);
     // save to api and reset score
+    await API.setPlayer(this.playerModel);
     this.add.image(400, 300, 'sprBg0');
     this.title = this.add.text(this.game.config.width * 0.5, 128, 'GAME OVER', {
       fontFamily: 'Arcadepix',
