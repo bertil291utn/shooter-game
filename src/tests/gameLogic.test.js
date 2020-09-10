@@ -1,3 +1,4 @@
+/* eslint-disable no-irregular-whitespace */
 /* eslint-disable no-underscore-dangle */
 import 'jest-canvas-mock';
 import UserScene from '../scenes/UserScene';
