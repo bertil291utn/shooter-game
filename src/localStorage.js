@@ -1,12 +1,9 @@
 const localStorageMethod = (() => {
-  const getLocalStorageVariable = () => localStorage.getItem('shooterGame');
-  const
-  const setUserName = (userName) => {
-    if (localStorage.getItem('shooterGame') !== null) return;
-    localStorage.setItem('shooterGame', JSON.stringify(value))
-  }
+  const setPlayer = (key, player) => {
+    localStorage.setItem(key, JSON.stringify(player));
+  };
 
-  return { setUserName }
-})()
+  return { setPlayer };
+})();
 
 export default localStorageMethod;

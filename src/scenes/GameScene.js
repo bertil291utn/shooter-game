@@ -12,6 +12,10 @@ export default class GameScene extends Phaser.Scene {
     this.textLabelScore = undefined;
   }
 
+  init() {
+    this.score = 0;
+  }
+
   create() {
     this.model = this.sys.game.globals.model;
     this.add.image(400, 300, 'sprBg0');

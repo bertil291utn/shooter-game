@@ -1,6 +1,7 @@
 /* eslint-disable comma-dangle */
 import Phaser from 'phaser';
 import Button from '../Objects/Button';
+import localStorageMethod from '../localStorage';
 
 export default class GameOverScene extends Phaser.Scene {
   constructor() {
@@ -8,6 +9,9 @@ export default class GameOverScene extends Phaser.Scene {
   }
 
   create() {
+    const key = this.sys.game.globals.localStorage;
+    localStorageMethod.setPlayer(key, this.sys.game.globals.playerModel);
+    // save to api and reset score
     this.add.image(400, 300, 'sprBg0');
     this.title = this.add.text(this.game.config.width * 0.5, 128, 'GAME OVER', {
       fontFamily: 'Arcadepix',
@@ -21,7 +25,7 @@ export default class GameOverScene extends Phaser.Scene {
 
     this.resetButton = new Button(
       this,
-      300,
+      400,
       300,
       'blueButton1',
       'blueButton2',
@@ -29,19 +33,10 @@ export default class GameOverScene extends Phaser.Scene {
       'Game'
     );
 
-    this.newPlayerButton = new Button(
-      this,
-      600,
-      300,
-      'blueButton1',
-      'blueButton2',
-      'New',
-      'User'
-    );
 
     this.mainButton = new Button(
       this,
-      300,
+      400,
       400,
       'blueButton1',
       'blueButton2',

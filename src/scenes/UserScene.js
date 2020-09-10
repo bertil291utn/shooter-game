@@ -2,6 +2,7 @@
 import Phaser from 'phaser';
 import config from '../config/config';
 import PlayerModel from '../PlayerModel';
+import localStorageMethod from '../localStorage';
 
 export default class UserScene extends Phaser.Scene {
   constructor() {
@@ -25,9 +26,10 @@ export default class UserScene extends Phaser.Scene {
         if (!inputUsername.value) return;
         if (!this.moreThanFourChars(inputUsername.value)) return;
 
-        // console.log(inputUsername.value);
         const playerModel = new PlayerModel();
-        playerModel.username = inputUsername.value;
+        playerModel.username = inputUsername.value.toLowerCase();
+        const key = this.sys.game.globals.localStorage;
+        localStorageMethod.setPlayer(key, playerModel);
         this.sys.game.globals.playerModel = playerModel;
         element.scene.scene.start('Instructions');
       }
