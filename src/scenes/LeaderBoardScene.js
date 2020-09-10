@@ -27,7 +27,7 @@ export default class LeaderBoardScene extends Phaser.Scene {
       color: '#fff',
     };
 
-    const textLoading = this.add.text(config.width / 2, (config.height / 2) - 30, 'Loading ...', dataConfig);
+    const textLoading = this.add.text(config.width / 2 - 40, config.height / 2, 'Loading ...', dataConfig);
     const data = await API.getLeaderBoard();
     textLoading.destroy();
     data.sort((a, b) => b.score - a.score);
