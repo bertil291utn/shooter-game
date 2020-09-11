@@ -1,11 +1,12 @@
 # Save to the king- Shooter Game
 
-#### This a shooter game designed with [Phaser framework](http://phaser.io/), to encourage to students under 8 years to becoming part of the develpoment wold throught games.
+#### This a shooter game designed with [Phaser framework](http://phaser.io/), to encourage kids who are under 8 years into tech and software development through games.
 
 <div align="center"><img src="https://user-images.githubusercontent.com/24902525/92851328-0f52c680-f3b3-11ea-8d9a-3020b54e32ba.png" alt="image" width="900" /></div>
 
-**Game video** [📽]()
-**Note:** Screen not adaptable for tablets or smartphones
+[**How to play?** 📽](https://www.loom.com/share/e7e738084a3c4012bc47fad7cca41720)
+
+**Note:** Game designed only for computers
 
 ## Built With 
 
@@ -47,21 +48,30 @@ The game has 3 options at the main scene
 - **Leader board**.- Display the top ten gamers, so you better be good to get this position
 
   - Player 
-  ![image](src/content/images/player.png)
-  This is the player, designed to move all over directions 
+
+    ![image](src/content/images/player.png)
+
+    This is the player, designed to move all over directions 
 
   - Enemies
-  **Square ship**
-  ![image](src/content/images/sprEnemy2.png)
-  It's not going to shoot any bullet just going ahead to you
 
-  **Shooters ship**
-  ![image](src/content/images/sprEnemy0.png)
-  This characters shoot bullets just right ahead to you
+    **Square ship**
+
+    ![image](src/content/images/sprEnemy2.png)
+
+    It's not going to shoot any bullet just going ahead to you
+
+    **Shooters ship**
+
+    ![image](src/content/images/sprEnemy0.png)
+
+    This characters shoot bullets just right ahead to you
   
-  **Bombs**
-  ![image](src/content/images/sprEnemy1.png)
-  This bombs going to you to explode where ever you are they're going to find you
+    **Bombs**
+
+    ![image](src/content/images/sprEnemy1.png)
+
+    This bombs going to you to explode where ever you are they're going to find you
 
 
 ### Instructions
@@ -82,7 +92,7 @@ The game has 3 options at the main scene
 - Add 3 shots before ends the game
 
 
-## Authors
+## Author
 
 👤 **Bertil Tandayamo**
 
@@ -92,7 +102,9 @@ The game has 3 options at the main scene
 
 
 ## Acknowledgment
+
 Background music and sounds by ashamaluevmusic on [SoundCloud](https://soundcloud.com/ashamaluevmusic/wartime?in=ashamaluevmusic/sets/music-for-gaming-videos)
+
 Inspired documentation and tutorial from [Phaser page](http://phaser.io/tutorials/making-your-first-phaser-3-game/part1)  
 
 ## 🤝 Contributing
