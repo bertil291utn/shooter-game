@@ -25,8 +25,12 @@ module.exports = {
         use: 'raw-loader'
       },
       {
-        test: /\.(gif|png|jpe?g|svg|xml)$/i,
+        test: /\.(gif|png|jpe?g|svg|xml|wav|mp3)$/i,
         use: 'file-loader'
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
       }
     ]
   },
@@ -39,7 +43,8 @@ module.exports = {
       WEBGL_RENDERER: JSON.stringify(true)
     }),
     new HtmlWebpackPlugin({
-      template: './index.html'
+      template: './index.html',
+      favicon: 'src/content/icons/favicon.svg'
     })
   ]
 };
