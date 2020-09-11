@@ -1,15 +1,34 @@
-# Phaser 3 Webpack Project Template
+# Save to the king- Shooter Game
 
-A Phaser 3 project template with ES6 support via [Babel 7](https://babeljs.io/) and [Webpack 4](https://webpack.js.org/)
-that includes hot-reloading for development and production-ready builds.
+#### This a shooter game designed with [Phaser framework](http://phaser.io/), to encourage to students under 8 years to becoming part of the develpoment wold throught games.
 
-Loading images via JavaScript module `import` is also supported.
+<div align="center"><img src="https://user-images.githubusercontent.com/24902525/92851328-0f52c680-f3b3-11ea-8d9a-3020b54e32ba.png" alt="image" width="900" /></div>
 
-## Requirements
+**Game video** [📽]()
+**Note:** Screen not adaptable for tablets or smartphones
+
+## Built With 
+
+- JavaScript ES6 Modules
+- HTML5
+- CSS3
+- Webpack
+- Babel
+- Phaser
+
+## Live Demo
+
+[:globe_with_meridians::computer:](https://bertil291utn.github.io/shooter-game)
+
+
+## Install
+### Requirements
 
 [Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
 
-## Available Commands
+- Clone the [project 📝](https://github.com/bertil291utn/shooter-game.git)
+- Install all dependencies `npm install`
+- Run one of these commands
 
 | Command | Description |
 |---------|-------------|
@@ -17,43 +36,80 @@ Loading images via JavaScript module `import` is also supported.
 | `npm start` | Build project and open web server running project |
 | `npm run build` | Builds code bundle with production settings (minification, uglification, etc..) |
 
-## Writing Code
+Deployed on [GitHub Pages](https://pages.github.com/)  
 
-After cloning the repo, run `npm install` from your project directory. Then, you can start the local development
-server by running `npm start`.
+## Game 
+### Description
+Reload page if get stuck on loading progress bar
+The game has 3 options at the main scene
+- **Play**.- Init the game only if you already save your username, else enter your name in the form
+- **Options**.- Mute the background music and game sounds
+- **Leader board**.- Display the top ten gamers, so you better be good to get this position
+
+  - Player 
+  ![image](src/content/images/player.png)
+  This is the player, designed to move all over directions 
+
+  - Enemies
+  **Square ship**
+  ![image](src/content/images/sprEnemy2.png)
+  It's not going to shoot any bullet just going ahead to you
+
+  **Shooters ship**
+  ![image](src/content/images/sprEnemy0.png)
+  This characters shoot bullets just right ahead to you
+  
+  **Bombs**
+  ![image](src/content/images/sprEnemy1.png)
+  This bombs going to you to explode where ever you are they're going to find you
 
 
-After starting the development server with `npm start`, you can edit any files in the `src` folder
-and webpack will automatically recompile and reload your server (available at `http://localhost:8080`
-by default).
+### Instructions
+![image](https://image.shutterstock.com/image-vector/arrow-button-on-keyboard-icon-260nw-339331691.jpg)
+- Use arrow keys on your to move your ship
+- Space bar to shot
 
-## Customizing Template
+### How to play 
+- Once the game has launched, select play button
+- If it's your first time in the game you have enter your username and save
+- If is not you're going ahead to the game
+- After the game ends appear a game over scene you chose whether reset or exit the game
+- Check on the leader boards if you are in the top ten
 
-### Babel
-You can write modern ES6+ JavaScript and Babel will transpile it to a version of JavaScript that you
-want your project to support. The targeted browsers are set in the `.babelrc` file and the default currently
-targets all browsers with total usage over "0.25%" but excludes IE11 and Opera Mini.
+## Improvements
 
-  ```
-  "browsers": [
-    ">0.25%",
-    "not ie 11",
-    "not op_mini all"
-  ]
-  ```
+- Allow new player in the same launch
+- Add 3 shots before ends the game
 
-### Webpack
-If you want to customize your build, such as adding a new webpack loader or plugin (i.e. for loading CSS or fonts), you can
-modify the `webpack/base.js` file for cross-project changes, or you can modify and/or create
-new configuration files and target them in specific npm tasks inside of `package.json'.
 
-## Deploying Code
-After you run the `npm run build` command, your code will be built into a single bundle located at 
-`dist/bundle.min.js` along with any other assets you project depended. 
+## Authors
 
-If you put the contents of the `dist` folder in a publicly-accessible location (say something like `http://mycoolserver.com`), 
-you should be able to open `http://mycoolserver.com/index.html` and play your game.
+👤 **Bertil Tandayamo**
 
-## Acknowledgement
+- Github: [@bertil291utn](https://github.com/bertil291utn)
+- Twitter: [@btandayamo](https://twitter.com/batandayamo)
+- LinkedIn: [Bertil Tandayamo](http://bit.ly/bertil_linkedin)
 
-- [Background music](https://soundcloud.com/ashamaluevmusic/wartime?in=ashamaluevmusic/sets/music-for-gaming-videos)
+
+## Acknowledgment
+Background music and sounds by ashamaluevmusic on [SoundCloud](https://soundcloud.com/ashamaluevmusic/wartime?in=ashamaluevmusic/sets/music-for-gaming-videos)
+Inspired documentation and tutorial from [Phaser page](http://phaser.io/tutorials/making-your-first-phaser-3-game/part1)  
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome! 
+
+- Fork the project
+- Clone the project to your local machine
+- Create a new branch  `git checkout -b your-branch-name`
+- Make your contributions
+- Push your branch up to your forked repository
+- Open a Pull Request with a detailed description to the development branch of the original project for a review
+
+## Show your support
+
+If you got until here, show your love hitting the ⭐️ button, I'd appreciate it.
+
+## 📝 License
+
+This project is [MIT](LICENSE) licensed.
