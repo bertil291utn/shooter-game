@@ -28,10 +28,10 @@ export default class LeaderBoardScene extends Phaser.Scene {
     };
 
     const textLoading = this.add.text(config.width / 2 - 40, config.height / 2, 'Loading ...', dataConfig);
-    const data = await API.getLeaderBoard();
+    let data = await API.getLeaderBoard();
     textLoading.destroy();
     data.sort((a, b) => b.score - a.score);
-    data.slice(0, 10);
+    data = data.slice(0, 10);
     let initialYPos = 90;
     data.map((elem, index) => {
       this.add.text(150, initialYPos, `${index + 1}`, dataConfig);
