@@ -21,6 +21,7 @@
 
 [:globe_with_meridians::computer:](https://bertil291utn.github.io/shooter-game)
 
+If the page get stuck on loading progress bar, please reload it
 
 ## Install
 ### Requirements
@@ -41,7 +42,7 @@ Deployed on [GitHub Pages](https://pages.github.com/)
 
 ## Game 
 ### Description
-Reload page if get stuck on loading progress bar
+
 The game has 3 options at the main scene
 - **Play**.- Init the game only if you already save your username, else enter your name in the form
 - **Options**.- Mute the background music and game sounds
