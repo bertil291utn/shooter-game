@@ -4,6 +4,7 @@ import config from '../config/config';
 import PlayerModel from '../PlayerModel';
 import localStorageMethod from '../localStorage';
 import myForm from '../content/text/my_form.html';
+import userSceneLogic from '../userSceneLogic';
 
 export default class UserScene extends Phaser.Scene {
   constructor() {
@@ -23,7 +24,7 @@ export default class UserScene extends Phaser.Scene {
       if (event.target.name === 'confirmButton') {
         const inputUsername = element.getChildByID('username');
         if (!inputUsername.value) return;
-        if (!this.moreThanFourChars(inputUsername.value)) return;
+        if (!userSceneLogic.moreThanFourChars(inputUsername.value)) return;
 
         const playerModel = new PlayerModel();
         playerModel.username = inputUsername.value.toLowerCase();
@@ -33,10 +34,5 @@ export default class UserScene extends Phaser.Scene {
         element.scene.scene.start('Instructions');
       }
     });
-  }
-
-  moreThanFourChars(value) {
-    const pattern = /^\w{4,}$/;
-    return pattern.test(value);
   }
 }
