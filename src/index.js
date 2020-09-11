@@ -10,6 +10,7 @@ import GameScene from './scenes/GameScene';
 import GameOverScene from './scenes/GameOverScene';
 import UserScene from './scenes/UserScene';
 import InstructionsScene from './scenes/InstructionsScene';
+import './style.css';
 
 class Game extends Phaser.Game {
   constructor() {

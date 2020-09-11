@@ -25,8 +25,12 @@ module.exports = {
         use: 'raw-loader'
       },
       {
-        test: /\.(gif|png|jpe?g|svg|xml|wav|mp3)$/i,
+        test: /\.(gif|png|jpe?g|svg|xml|wav|mp3|ttf)$/i,
         use: 'file-loader'
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.html$/i,
