@@ -4,7 +4,7 @@
 
 <div align="center"><img src="https://user-images.githubusercontent.com/24902525/92851328-0f52c680-f3b3-11ea-8d9a-3020b54e32ba.png" alt="image" width="900" /></div>
 
-[**How to play?** 📽](https://www.loom.com/share/e7e738084a3c4012bc47fad7cca41720)
+
 
 **Note:** Game designed only for computers
 
@@ -40,47 +40,23 @@ If the page get stuck on loading progress bar, please reload it
 
 Deployed on [GitHub Pages](https://pages.github.com/)  
 
-## Game 
-### Description
+## Game Design Document
 
-The game has 3 options at the main scene
-- **Play**.- Init the game only if you already save your username, else enter your name in the form
-- **Options**.- Mute the background music and game sounds
-- **Leader board**.- Display the top ten gamers, so you better be good to get this position
-
-  - Player 
-
-    ![image](src/content/images/player.png)
-
-    This is the player, designed to move all over directions 
-
-  - Enemies
-
-    **Square ship**
-
-    ![image](src/content/images/sprEnemy2.png)
-
-    It's not going to shoot any bullet just going ahead to you
-
-    **Shooters ship**
-
-    ![image](src/content/images/sprEnemy0.png)
-
-    This characters shoot bullets just right ahead to you
-  
-    **Bombs**
-
-    ![image](src/content/images/sprEnemy1.png)
-
-    This bombs going to you to explode where ever you are they're going to find you
+Check the document in [here](GameDesignDocument.md)
 
 
-### Instructions
-![image](https://image.shutterstock.com/image-vector/arrow-button-on-keyboard-icon-260nw-339331691.jpg)
+## How to play 
+
+[**Video explanation** 📽](https://www.loom.com/share/e7e738084a3c4012bc47fad7cca41720)
+ 
+### Game controls 
+ ![image](https://image.shutterstock.com/image-vector/arrow-button-on-keyboard-icon-260nw-339331691.jpg)
+
 - Use arrow keys on your to move your ship
 - Space bar to shot
 
-### How to play 
+### Description
+
 - Once the game has launched, select play button
 - If it's your first time in the game you have enter your username and save
 - If is not you're going ahead to the game
@@ -107,6 +83,8 @@ The game has 3 options at the main scene
 Background music and sounds by ashamaluevmusic on [SoundCloud](https://soundcloud.com/ashamaluevmusic/wartime?in=ashamaluevmusic/sets/music-for-gaming-videos)
 
 Inspired documentation and tutorial from [Phaser page](http://phaser.io/tutorials/making-your-first-phaser-3-game/part1)  
+
+Example to create [Game Design Documentation](https://www.slideshare.net/davewilliamharrison/game-design-doc-template)
 
 ## 🤝 Contributing
 
