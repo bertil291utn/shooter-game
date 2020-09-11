@@ -1,7 +1,6 @@
 /* eslint-disable no-irregular-whitespace */
 /* eslint-disable no-underscore-dangle */
 import 'jest-canvas-mock';
-// import UserScene from '../scenes/UserScene';
 import MainScene from '../scenes/MainScene';
 import PlayerModel from '../PlayerModel';
 import localStorageMethod from '../localStorage';
@@ -11,7 +10,6 @@ import userSceneLogic from '../userSceneLogic';
 
 const key = 'gameShooter';
 describe('When user input username', () => {
-  // const userScene = new UserScene();
   it('returns true if there are more than 4 characters', () => {
     expect(userSceneLogic.moreThanFourChars('betos')).toBeTruthy();
   });
