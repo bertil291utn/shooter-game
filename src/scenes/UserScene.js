@@ -3,6 +3,7 @@ import Phaser from 'phaser';
 import config from '../config/config';
 import PlayerModel from '../PlayerModel';
 import localStorageMethod from '../localStorage';
+import myForm from '../content/text/my_form.html';
 
 export default class UserScene extends Phaser.Scene {
   constructor() {
@@ -11,9 +12,7 @@ export default class UserScene extends Phaser.Scene {
 
   create() {
     this.add.image(400, 300, 'sprBg0');
-    const element = this.add
-      .dom(config.width / 2, config.height / 2 - 200)
-      .createFromCache('my_form');
+    const element = this.add.dom(config.width / 2, config.height / 2 - 200).createFromHTML(myForm);
 
     element.setPerspective(800);
     element.addListener('click');

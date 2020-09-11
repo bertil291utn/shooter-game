@@ -25,7 +25,6 @@ import sndExplode1 from '../content/sounds/sndExplode1.wav';
 import sndLaser from '../content/sounds/sndLaser.wav';
 import sndBtnOver from '../content/sounds/sndBtnOver.wav';
 import sndBtnDown from '../content/sounds/sndBtnDown.wav';
-import myForm from '../content/text/my_form.html';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
@@ -147,12 +146,6 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('sprBtnRestartDown', sprBtnRestartDown);
     this.load.audio('sndBtnOver', sndBtnOver);
     this.load.audio('sndBtnDown', sndBtnDown);
-    // const s = '<div id="myDiv"></div>';
-    const htmlObject = document.createElement('html');
-    htmlObject.innerHTML = myForm;
-    this.load.html('my_form', htmlObject);
-    console.log(htmlObject);
-
   }
 
   ready() {
